@@ -46,4 +46,4 @@ const DatosExtraSchema = new mongoose.Schema({
     versionKey: false
 })
 
-module.exports = mongoose.models.datos_extra || mongoose.model('datos_extra', DatosExtraSchema);
+module.exports = mongoose.models.datos_extra || mongoose.model('datos_extras', DatosExtraSchema);

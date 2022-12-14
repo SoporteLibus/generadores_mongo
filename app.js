@@ -24,9 +24,6 @@ app.use(require("body-parser").json());
 
 app.use('/api/', require('./app/routes/index'));
 
-//conexion a base de datos de Mongo
-
-
 app.listen(PORT, () => {
-    console.log("Api lista por el puerto ", PORT)
+    console.log("Api lista por el puerto", PORT)
 });

@@ -104,7 +104,7 @@ const datosExtra = async (req, res) => {
 }
 
 const generador1 = async (req, res) => {
-    var { R1,R2,R3,R4,R5,R6,R7,R8,R9,R10,R11,R12,R13,R14,R15,R16,R17,R18,R19,R20,R55,R56,R57,R58,R59,R60,R61,R62,R63,R64,R65,R66,R67,R68,R69,R70,R71,R72 } = req.body
+    const { R1,R2,R3,R4,R5,R6,R7,R8,R9,R10,R11,R12,R13,R14,R15,R16,R17,R18,R19,R20,R55,R56,R57,R58,R59,R60,R61,R62,R63,R64,R65,R66,R67,R68,R69,R70,R71,R72 } = req.body
     const response = await Generador1.create([
         {
         r1: R1,r2: R2,r3: R3,r4: R4,r5: R5,r6: R6,r7: R7,r8: R8,r9: R9,r10: R10,
@@ -215,7 +215,7 @@ const getDatosExtrasById=async (req,res)=>{
     const id = req.params.id; // ejemplo: '2022-12-13'
     const fechaInicial = id.replaceAll("-",",")
     const fechaFinal = id.substring(0,8).concat(Number(id.substring(8)) + 1);
-    const response = await datosExtra.find({
+    const response = await DatosExtra.find({
     createdAt: { $gte: new Date(fechaInicial), $lt: new Date(fechaFinal) }
     }, (err, actividad) => {
         if(err) {
